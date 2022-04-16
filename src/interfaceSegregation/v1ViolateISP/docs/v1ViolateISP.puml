@@ -1,0 +1,54 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+class A
+
+class C
+
+interface Interface_violate_ISP
+{
+    + op1() : void
+    + op2() : void
+    + op3() : void
+    + op4() : void
+    + op5() : void
+}
+
+A -> Interface_violate_ISP
+
+note left of (A)
+- A 通过 Interface_violate_ISP 依赖 B
+- 但是 A 只会用到 Interface_violate_ISP
+  的 op1, op2, op3
+end note
+
+
+C --> Interface_violate_ISP
+
+note left of (C)
+- C 通过 Interface_violate_ISP 依赖 D
+- 但是 C 只会用到 Interface_violate_ISP
+  的 op1, op4, op5
+end note
+
+class B {
+    + op1() : void
+    + op2() : void
+    + op3() : void
+    + op4() : void
+    + op5() : void
+}
+
+class D {
+    + op1() : void
+    + op2() : void
+    + op3() : void
+    + op4() : void
+    + op5() : void
+}
+
+Interface_violate_ISP <|.. B
+Interface_violate_ISP <|.. D
+
+
+@enduml

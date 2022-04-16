@@ -1,0 +1,45 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+class A
+
+class C
+
+interface InterfaceBD
+{
+    + op1() : void
+
+}
+
+interface InterfaceB
+{
+    + op2() : void
+    + op3() : void
+}
+
+interface InterfaceD
+{
+    + op4() : void
+    + op5() : void
+}
+
+A --> InterfaceBD
+A --> InterfaceB
+
+
+
+C --> InterfaceBD
+C --> InterfaceD
+
+
+class B
+class D
+
+InterfaceBD <|.. B
+InterfaceB <|.. B
+
+InterfaceBD <|.. D
+InterfaceD <|.. D
+
+
+@enduml

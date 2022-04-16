@@ -1,0 +1,40 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class GraphicEditor
+{
+    + drawShape() : void
+}
+
+note left of GraphicEditor
+    drawShape 调用
+    Shape实现类的draw方法
+end note
+
+GraphicEditor --> Shape
+
+abstract class Shape
+{
+    + {abstract} draw() : void
+}
+
+class Circle
+{
+    + draw() : void
+}
+
+class Triangle
+{
+    + draw() : void
+}
+
+class Rectangle
+{
+    + draw() : void
+}
+
+Shape <|-- Circle
+Shape <|-- Rectangle
+Shape <|-- Triangle
+
+@enduml

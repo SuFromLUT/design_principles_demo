@@ -1,0 +1,14 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Base
+
+class B
+class A
+
+Base <|-- A
+Base <|-- B
+
+A -* B
+
+@enduml

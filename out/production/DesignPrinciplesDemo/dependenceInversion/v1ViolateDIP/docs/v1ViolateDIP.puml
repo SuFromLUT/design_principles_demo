@@ -1,0 +1,22 @@
+@startuml
+
+class Person
+{
+    + receiveMsgFromEmail(Email email) : void
+    + receiveMsgFromWechat(Wechat wechat) : void
+}
+
+class Email
+{
+    + getInfo() : void
+}
+
+class Wechat
+{
+    + getInfo() : void
+}
+
+Person -> Email
+Person --> Wechat
+
+@enduml

@@ -1,0 +1,22 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class GraphicEditor
+{
+    + drawCircle() : void
+    + drawRectangle() : void
+    + drawShape() : void
+}
+
+class Rectangle
+class Shape
+class Circle
+
+Rectangle -|> Shape
+Shape <|- Circle
+
+GraphicEditor --> Rectangle
+GraphicEditor --> Shape
+GraphicEditor --> Circle
+
+@enduml

@@ -1,1 +1,2 @@
 # design_principles_demo
+个人学习软件设计原则时编写的代码及其笔记
